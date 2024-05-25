@@ -24,7 +24,7 @@ export default function Footer() {
         {Object.entries(footerNavItems).map(([path, { name }]) => {
           return (
             <a
-              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              className="flex items-center transition-all hover:text-black dark:hover:text-white"
               rel="noopener noreferrer"
               target="_blank"
               key={path}
