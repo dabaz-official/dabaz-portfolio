@@ -18,7 +18,7 @@ export function Crafts() {
               <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
                 {name}
               </p>
-              <Image src={imageSrc} alt={name} width={1920} height={1080} className='rounded-xl' />
+              <Image src={imageSrc} alt={name} width={1920} height={1080} className='rounded-md' />
             </div>
           </a>
         )
