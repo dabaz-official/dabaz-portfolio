@@ -26,6 +26,9 @@ export const footerNavItems = {
   'mailto:dabaz@dabaz.me': {
     name: 'Email',
   },
+  'https://youtube.com/@dabaz_official': {
+    name: 'YouTube',
+  },
   'https://tiktok.com/@dabaz_official': {
     name: 'TikTok',
   },
