@@ -1,7 +1,7 @@
 export const craftsItems = {
   'https://cyclic.dabaz.me': {
     name: 'Cyclic',
-    imageSrc: 'https://cyclic.dabaz.me/landing-page/cyclic-screenshot.webp',
+    imageSrc: 'https://cyclic.dabaz.me/landing-page/cyclic-screenshot.jpg',
   },
   'https://python.dabaz.me': {
     name: 'DabPython',
