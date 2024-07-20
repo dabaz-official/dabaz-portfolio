@@ -1,13 +1,13 @@
 export const headerNavItems = {
-  '/': {
-    name: 'Home',
-  },
   '/blog': {
     name: 'Blog',
   },
+  '/projects': {
+    name: 'Projects',
+  },
   '/contact': {
     name: 'Contact',
-  },
+  }
 };
 
 export const footerNavItems = {
