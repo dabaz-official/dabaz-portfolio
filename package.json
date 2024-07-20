@@ -1,4 +1,5 @@
 {
+  "name": "dabaz-portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,14 +13,15 @@
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
     "@vercel/analytics": "^1.3.1",
-    "@vercel/speed-insights": "^1.0.11",
+    "@vercel/speed-insights": "^1.0.12",
     "geist": "1.2.2",
     "next": "link:@vercel/speed-insights/next",
     "next-mdx-remote": "^4.4.1",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.39",
     "react": "link:@vercel/analytics/react",
     "react-dom": "18.2.0",
-    "sugar-high": "^0.6.0",
+    "react-icons": "^5.2.1",
+    "sugar-high": "^0.6.1",
     "tailwindcss": "4.0.0-alpha.13",
     "typescript": "5.3.3"
   }
