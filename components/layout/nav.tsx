@@ -47,7 +47,7 @@ export function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 transition-colors duration-200 ${
-      isScrolled ? 'bg-white/80 dark:bg-black/60 backdrop-blur' : 'bg-white dark:bg-black'
+      isScrolled ? 'bg-white/80 dark:bg-black/60 backdrop-blur-lg' : 'bg-white dark:bg-black'
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
         <div className="flex flex-1">
