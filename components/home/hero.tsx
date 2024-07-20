@@ -2,16 +2,16 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <div className="relative isolate -z-10 overflow-hidden pt-14 mx-auto">
+    <div className="relative isolate z-10 overflow-hidden pt-8 mx-auto">
       <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
         <h1 className="max-w-2xl text-6xl font-bold tracking-tight sm:text-9xl lg:col-span-2 xl:col-auto">
           DabAZ
         </h1>
         <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1 space-y-4 sm:space-y-6">
-          <h2 className="max-w-2xl text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl lg:col-span-2 xl:col-auto">
+          <h2 className="max-w-2xl text-4xl font-bold tracking-tight text-neutral-600 dark:text-neutral-400 sm:text-6xl lg:col-span-2 xl:col-auto">
             I am an ethical hacker, artist, designer, and developer.
           </h2>
-          <h2 className="max-w-2xl text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-6xl lg:col-span-2 xl:col-auto">
+          <h2 className="max-w-2xl text-4xl font-bold tracking-tight text-neutral-600 dark:text-neutral-400 sm:text-6xl lg:col-span-2 xl:col-auto">
             This is a place for my crafty adventures.
           </h2>
         </div>
