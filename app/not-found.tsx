@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { RxChevronRight } from 'react-icons/rx';
 
 export default function NotFound() {
   return (
@@ -11,9 +12,12 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className=''
+        className="flex items-center text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-neutral-50 hover:underline"
       >
-        Go back to home page -&gt;
+        Go back to home page
+        <RxChevronRight
+          className="h-4 w-4 mt-0.5 ml-0.5"
+        />
       </Link>
     </section>
   )

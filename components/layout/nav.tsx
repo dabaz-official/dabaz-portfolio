@@ -76,7 +76,7 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="flex items-center text-sm leading-6 text-neutral-700 dark:text-neutral-300 transition-all hover:text-neutral-950 dark:hover:text-neutral-50 hover:underline"
+                  className="flex items-center text-sm leading-6 text-neutral-700 dark:text-neutral-300 transition-all hover:text-black dark:hover:text-neutral-50 hover:underline"
                 >
                   {name}
                 </Link>
