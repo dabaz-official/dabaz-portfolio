@@ -8,7 +8,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { baseUrl } from 'app/sitemap'
 import { seo } from 'lib/seo'
 import './globals.css'
-import { Navbar } from 'components/nav'
+import { Navbar } from 'components/layout/nav'
+import { Footer } from 'components/layout/footer'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dabaz.me'),
@@ -62,7 +63,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white h-full antialiased select-none',
+        'text-black bg-white dark:text-white dark:bg-black h-full antialiased select-none',
         GeistSans.variable,
         GeistMono.variable
       )}
@@ -73,6 +74,7 @@ export default function RootLayout({
           {children}
           <Analytics />
           <SpeedInsights />
+          <Footer />
         </main>
       </body>
     </html>

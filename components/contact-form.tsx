@@ -8,7 +8,7 @@ export default function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h1 className="mb-8 text-2xl font-semibold tracking-tight">
         Thank you for your message!
       </h1>
   )}
