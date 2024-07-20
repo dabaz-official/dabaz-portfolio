@@ -55,7 +55,7 @@ export function Navbar() {
             href="/"
             className="-m-1.5 p-1.5"
           >
-            <Logo className="h-6 w-auto text-black dark:text-white" />
+            <Logo className="h-6 w-auto text-black dark:text-white hover:rotate-180 transition-all duration-1000" />
           </Link>
         </div>
         <div className="flex lg:hidden">
