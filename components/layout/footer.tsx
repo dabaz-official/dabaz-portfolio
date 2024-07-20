@@ -1,4 +1,5 @@
-import { footerNavItems } from "lib/nav-items"
+import { footerNavItems } from 'lib/nav-items'
+import { social } from 'lib/social'
 
 function ArrowIcon() {
   return (
@@ -19,28 +20,26 @@ function ArrowIcon() {
 
 export function Footer() {
   return (
-    <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:grid md:grid-cols-4 md:space-y-0 dark:text-neutral-300">
-        {Object.entries(footerNavItems).map(([path, { name }]) => {
-          return (
+    <footer className="mt-16">
+      <div className="mx-auto py-12 md:flex md:items-center md:justify-between">
+        <div className="flex justify-center space-x-6 md:order-2">
+          {social.map((item) => (
             <a
-              className="flex items-center transition-all hover:text-black dark:hover:text-white"
-              rel="noopener noreferrer"
-              target="_blank"
-              key={path}
-              href={path}
+              key={item.name}
+              href={item.href} 
+              className="text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition"
+              target='_blank'
             >
-              <ArrowIcon />
-              <p className="ml-2 h-7">
-                {name}
-              </p>
+              <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
-          )
-        })}
-      </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} DabAZ
-      </p>
+          ))}
+        </div>
+        <div className="mt-8 md:order-1 md:mt-0">
+          <p className="text-center text-sm leading-5 text-neutral-700 dark:text-neutral-300">
+            &copy; {new Date().getFullYear()} Design & Code by DabAZ
+          </p>
+        </div>
+      </div>
     </footer>
   )
 }

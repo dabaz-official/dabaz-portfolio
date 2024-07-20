@@ -9,6 +9,7 @@ import { baseUrl } from 'app/sitemap'
 import { seo } from 'lib/seo'
 import './globals.css'
 import { Navbar } from 'components/layout/nav'
+import { Footer } from 'components/layout/footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -87,6 +88,7 @@ export default function RootLayout({
         <Navbar />
         <main className="max-w-7xl p-4 lg:px-8 mx-auto mt-16">
           {children}
+          <Footer />
           <Analytics />
           <SpeedInsights />
         </main>
