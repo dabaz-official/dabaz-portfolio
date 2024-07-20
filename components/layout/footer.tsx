@@ -3,7 +3,7 @@ import { social } from 'lib/social'
 export function Footer() {
   return (
     <footer className="mt-16">
-      <div className="mx-auto py-12 md:flex md:items-center md:justify-between">
+      <div className="mx-auto py-12 md:flex md:items-center md:justify-between  max-w-2xl lg:max-w-none">
         <div className="flex justify-center space-x-6 md:order-2">
           {social.map((item) => (
             <a
