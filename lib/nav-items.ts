@@ -1,5 +1,5 @@
 export const headerNavItems = {
-  '/blog': {
+  '#blog': {
     name: 'Blog',
   },
   '/contact': {
