@@ -57,7 +57,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section>
+    <section className="mx-auto max-w-2xl sm:max-w-none">
       <script
         type="application/ld+json"
         suppressHydrationWarning

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import type { Viewport } from 'next'
+import localFont from 'next/font/local'
 
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -11,8 +11,8 @@ import './globals.css'
 import { Navbar } from 'components/layout/nav'
 import { Footer } from 'components/layout/footer'
 
-const inter = Inter({
-  subsets: ['latin'],
+const inter = localFont({
+  src: './inter.woff2',
   variable: '--font-inter',
   display: 'swap',
 });
