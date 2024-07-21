@@ -1,0 +1,260 @@
+---
+title: 'Docker Introduction'
+author: 'DabAZ'
+authorImage: '/images/avatar.jpg'
+authorTwitter: 'dabaz_official'
+authorTwitterId: 'dabaz_official'
+tags: ['docker', 'introduction']
+publishedAt: '2024-07-21'
+summary: 'In this post, we will delve into the world of Docker, exploring its core concepts, benefits, and how it revolutionizes the way we build, deploy, and manage applications.'
+---
+
+# What is Docker?
+
+- A platform that makes sure our code runs smoothly in any environment.
+- A platform that enables development, packaging, and execution.
+- By clearly specifying our application requirements, such as Node.js version and necessary packages, Docker generates a self-contained box that includes its own operating system and all the components essential for running our application.
+- It acts like a separate computer virtually providing the operating system, run times, and everything required for our application to run smoothly.
+
+# The reasons for using Docker
+
+Big companies such as eBay, Spotify, Yelp, Uber etc. noticed that using docker made their apps better and faster in terms of both dev and deployment. Uber accelerates developers onboarding from weeks to minutes with Docker.
+
+## Consistency across environments
+
+Docker ensures that our app runs the same on everyone’s computer. Everyone uses the same commands to run the app.
+
+For example, Node.js isn’t the same on Linux, macOS, and Windows. Developers usually have to deal with different operating systems. Docker takes care of all of that for us.
+
+## Isolation
+
+Docker maintains a clear boundary between our app and its dependencies. The isolation:
+
+- improves security
+- simplifies debugging
+- makes development process smoother
+
+## Portability
+
+Docker allows us easily move our app between different stages like from development to testing or testing to production.
+
+Docker containers are also lightweight and share the host system resources, making them more efficient than any traditional virtual machines. This efficiency translates to faster application start times and reduced resource usage.
+
+## Version Controls
+
+Docker helps us track versions of our app. It lets us easily return to a previous version if something is wrong.
+
+## Scalability
+
+Docker makes it easy to scale our app. We can easily add more containers to handle increased load.
+
+## DevOps Integration
+Docker integrates well with DevOps practices. It helps us automate our deployment process and makes it easier to manage our app in production.
+
+This integration ensures that the software is
+
+- developed
+- tested
+- deployed efficiently
+
+with continuous feedback and collaboration.
+
+# How does Docker work?
+
+There are two most important concepts in Docker: images and containers. The entire workflow revolves around them.
+
+## Images
+
+A Docker image is a lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
+
+We want to run images somewhere so there is container.
+
+## Containers
+
+A Docker container is a runnable instance of a Docker image. It represents the execution environment for a specific app, including everything included into Docker image.
+
+The container follows the instructions of the image by executing necessary commands, downloading packages and setting things up to run our app.
+
+We could create on image and get as many instances as we want from it.
+
+## Volume
+
+A Docker volume is a persistent data storage mechanism that allows the data to be shared between a Docker container and the host machine which is usually a computer or a server or even among multiple containers.
+
+It ensures data durability and persistence even if the container is stopped or removed. Think of it as a shared folder that exists outside the container.
+
+## Network
+
+It’s a communication channel that enable different Docker containers to talk to each other or with the external world.
+
+It creates connectivity, allowing containers to share information and services while maintaining isolation.
+
+## Docker Workflow
+
+The Docker client is the command center where we issue instructions.
+
+The Docker host then executes these instructions and manage containers.
+
+The Docker registry serves as a centralized storage.
+
+### Docker Client
+
+- the UI for interacting with Docker
+- the tool we use to give Docker commands
+
+### Docker Host (Docker Daemon)
+
+- the background process responsible for managing containers on the host system
+- listens for Docker client commands
+- creates and manages containers
+- builds images
+- handles other Docker-related tasks
+
+### Docker Registry (Docker Hub)
+
+- a centralized repo of Docker images
+- hosts both public and private registries or packages
+- Docker → Docker Hub = Git → GitHub
+- images are stored in these registries
+
+# How to use Docker?
+
+## Create a Docker image
+
+It starts from a special file: Dockerfile.
+
+### FROM
+
+Specifies the base image, it's the first instruction in a Dockerfile.
+
+```docker
+FROM image[:tag] [AS name]
+
+# example
+FROM ubuntu:20.04
+```
+
+### WORKDIR
+
+Sets the working directory for subsequent RUN, CMD, ENTRYPOINT instructions.
+
+```docker
+WORKDIR /path/to/dir
+
+# example
+WORKDIR /app
+```
+
+### COPY
+
+Copies local files into the container.
+
+```docker
+COPY [--chown=<user>:<group>] <src>... <dest>
+
+# example
+COPY . /app
+```
+
+### RUN
+
+Executes commands during the build process.
+
+```docker
+RUN <command>
+
+# example
+RUN npm run dev
+```
+
+### EXPOSE
+
+Declares the ports the container listens on at runtime.
+
+```docker
+EXPOSE <port> [<port>/<protocol>...]
+
+# example
+EXPOSE 3000
+```
+
+### ENV
+
+Sets environment variables.
+
+```docker
+ENV KEY=VALUE
+
+# example
+ENV NODE_ENV=production
+```
+
+### ARG
+
+Defines build-time variables that can be passed via `--build-arg` during build
+
+```docker
+ARG <name>[=<default value>]
+
+# example
+ARG NODE_VERSION=20
+```
+
+### VOLUME
+
+Creates a mount point.
+
+```docker
+VOLUME ["/data"]
+
+# example
+VOLUME /myvol
+```
+
+### CMD
+
+Specifies the command to run when the container starts.
+
+```docker
+CMD ["executable","param1","param2"]
+
+# example
+CMD ["param1","param2"]
+```
+
+### ENTRYPOINT
+
+Also used to specify the command to run when the container starts.
+
+```docker
+ENTRYPOINT ["executable", "param1", "param2"]
+
+# example
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+```
+
+### Differences between CMD and ENTRYPOINT
+
+Differences between CMD and ENTRYPOINT
+
+#### Purpose
+
+- CMD is mainly used to provide default commands when starting the container.
+- ENTRYPOINT is used to set the main command to be executed when the container starts.
+
+
+#### Overridability
+
+- CMD can be easily overridden by docker run command-line arguments.
+- ENTRYPOINT is not easily overridden, requiring the --entrypoint option to do so.
+
+
+#### Combined usage
+
+- When CMD and ENTRYPOINT coexist, CMD acts as arguments passed to ENTRYPOINT.
+
+
+#### Recommended usage:
+
+- For scenarios where the startup command needs to change frequently, using CMD is more flexible.
+- For fixed main commands, using ENTRYPOINT is more appropriate.
